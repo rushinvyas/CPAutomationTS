@@ -1,0 +1,35 @@
+{
+  "name": "cp-automation-ts",
+  "version": "1.0.0",
+  "description": "Playwright + Cucumber + TypeScript Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "cucumber-js --config cucumber.json --tags @CompliancePortalRegression",
+    "test:candidate-login": "cucumber-js --config cucumber.json features/01CandidateLogin/Features/LoginVerify.feature",
+    "test:dryrun": "cucumber-js --config cucumber.dryrun.json --dry-run",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "report": "npm run allure:generate",
+    "summary": "node scripts/write-run-summary.cjs",
+    "archive:report": "node scripts/archive-report.cjs",
+    "report:html": "node scripts/generate-html-report.cjs"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.0.1",
+    "@azure/keyvault-secrets": "^4.8.0",
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.42.1",
+    "allure-cucumberjs": "^2.14.1",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.9.2",
+    "playwright": "^1.42.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@types/chai": "^4.3.11",
+    "chai": "^4.4.1"
+  }
+}

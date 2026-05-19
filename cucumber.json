@@ -1,0 +1,16 @@
+{
+  "default": {
+    "requireModule": ["ts-node/register"],
+    "require": [
+      "src/core/CustomWorld.ts",
+      "src/hooks/*.ts",
+      "src/steps/*.ts"
+    ],
+    "format": [
+      "progress",
+      "summary",
+      "json:artifacts/cucumber-report.json",
+      "./reporter.cjs"
+    ]
+  }
+}

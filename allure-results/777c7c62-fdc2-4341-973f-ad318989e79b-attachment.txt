@@ -1,0 +1,1 @@
+Validation: Forgot password screen is displayed successfully.

@@ -1,0 +1,1 @@
+Validation: blank email validation message is displayed as expected.

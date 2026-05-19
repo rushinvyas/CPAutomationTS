@@ -1,0 +1,1 @@
+Validation: User is logged out and redirected to login page.

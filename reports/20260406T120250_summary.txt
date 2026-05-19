@@ -1,0 +1,13 @@
+CP Automation TS Execution Summary
+Run Timestamp: 20260406T120250
+Environment: Not Set
+Portal: Not Set
+
+Scenarios -> Passed: 0, Failed: 2, Skipped: 0
+Steps -> Passed: 4, Failed: 2, Skipped: 18
+
+Scenario Details:
+- [FAILED] 01 Prod Smoke Regression Suite - AGILE :: 01 Verify Sign In and Sign Out functionality for Agile Candidate
+  Failed Step: I verify Otp Entered for candidate should be Correct
+- [FAILED] 01 Prod Smoke Regression Suite - AGILE :: 02 Verify Sign In and Sign Out functionality for Agile Staff user
+  Failed Step: I verify that Agile Staff should be login and Dashboard should be open

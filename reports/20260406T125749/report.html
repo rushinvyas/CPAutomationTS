@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CP Automation TS Report</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; background: #f7f7fb; color: #222; }
+    h1, h2 { margin-bottom: 12px; }
+    .summary, .feature { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    pre { white-space: pre-wrap; word-break: break-word; margin: 0; font-family: Consolas, monospace; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f0f2f8; }
+    tr.passed td { background: #eefaf0; }
+    tr.failed td { background: #fff0f0; }
+    tr.skipped td { background: #faf7e8; }
+    details.scenario { margin-bottom: 16px; border: 1px solid #e5e7ef; border-radius: 10px; padding: 12px; }
+    summary { cursor: pointer; font-weight: 600; }
+    .scenario-name { color: #1d3557; }
+    a { color: #c2188b; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>CP Automation TS HTML Report</h1>
+  <section class="summary">
+    <h2>Execution Summary</h2>
+    <pre>CP Automation TS Execution Summary
+Run Timestamp: 20260406_173835
+Environment: UAT
+Portal: HOLT
+Duration: 2m 55s 776ms
+
+Scenarios -&gt; Passed: 1, Failed: 1, Skipped: 0
+Scenario Percentages -&gt; Pass: 50.00%, Fail: 50.00%
+Steps -&gt; Passed: 18, Failed: 1, Skipped: 5
+Step Percentages -&gt; Pass: 75.00%, Fail: 4.17%
+
+Scenario Details:
+- [PASSED] 01 Prod Smoke Regression Suite - HOLT :: 01 Verify Sign In and Sign Out functionality for Holt Candidate
+- [FAILED] 01 Prod Smoke Regression Suite - HOLT :: 02 Verify Sign In and Sign Out functionality for Holt Staff user
+  Failed Step: I verify Holt Candidate should be display in Awaiting review grid box</pre>
+  </section>
+  
+      <section class="feature">
+        <h2>02 Login Screen Functionality</h2>
+        
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">01 Verify Sign In and Sign Out functionality for HOLT Candidate</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6438 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to login to CP with &quot;HOLT Candidate&quot; credentials</td>
+              <td>PASSED</td>
+              <td>1460 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify the Candidate should be login and Dashboard page should be open</td>
+              <td>PASSED</td>
+              <td>11069 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I verify that user should be logout from CP and redirect to Login page</td>
+              <td>PASSED</td>
+              <td>657 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">02 Verify Login screen validation functionality with blank validation for Username &amp; Password</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="failed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>FAILED</td>
+              <td>66441 ms</td>
+              <td><pre>page.goto: Timeout 60000ms exceeded.
+Call log:
+[2m  - navigating to &quot;https://compliance-uat.holtdoctors.co.uk/login&quot;, waiting until &quot;domcontentloaded&quot;[22m
+
+    at CandidateLoginPage.openScreen (C:\AutomationProjects\CPAutomationTS\src\pages\CandidateLoginPage.js:24:25)
+    at CustomWorld.&lt;anonymous&gt; (C:\AutomationProjects\CPAutomationTS\src\steps\candidateLoginSteps.ts:25:24)</pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>When </td>
+              <td>I click on LOG IN button without inserting &quot;Username and Password&quot;</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>Then </td>
+              <td>I verify that &quot;validation&quot; messages should be display</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">03 Verify Login screen validation functionality with blank validation for Username</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>36604 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I click on LOG IN button without inserting &quot;Username&quot;</td>
+              <td>PASSED</td>
+              <td>1288 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;validation&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>269 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">04 Verify Login screen validation functionality with blank validation for Password</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6344 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I click on LOG IN button without inserting &quot;Password&quot;</td>
+              <td>PASSED</td>
+              <td>1378 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;validation&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>340 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">05 Verify Login screen validation functionality with wrong Username</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>5806 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I click on LOG IN button with inserting &quot;Wrong Username&quot;</td>
+              <td>PASSED</td>
+              <td>1361 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;error&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>296 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">06 Verify Login screen validation functionality with wrong Password</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6605 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I click on LOG IN button with inserting &quot;Wrong Password&quot;</td>
+              <td>PASSED</td>
+              <td>1333 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;error&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>302 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">07 Verify Login screen validation functionality with wrong Username and Password</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6087 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I click on LOG IN button with inserting &quot;Wrong Username and Password&quot;</td>
+              <td>PASSED</td>
+              <td>1299 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;error&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>289 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">08 Verify Sign In and Sign Out functionality for HOLT Staff user</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>5585 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to login to CP with &quot;HOLT Staff&quot; credentials</td>
+              <td>PASSED</td>
+              <td>1466 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;HOLT Staff&quot; should be login and Dashboard page should be open</td>
+              <td>PASSED</td>
+              <td>3332 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I verify that user should be logout from CP and redirect to Login page</td>
+              <td>PASSED</td>
+              <td>899 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">09 Verify Sign In functionality for Agency user</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6383 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to login to CP with &quot;Agency User&quot; credentials</td>
+              <td>PASSED</td>
+              <td>1395 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;Agency User&quot; should not login and error messages should be display</td>
+              <td>PASSED</td>
+              <td>329 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">10 Verify Sign In functionality for Client Person</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>5668 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to login to CP with &quot;Client Person&quot; credentials</td>
+              <td>PASSED</td>
+              <td>1361 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;Client Person&quot; should not login and error messages should be display</td>
+              <td>PASSED</td>
+              <td>363 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">11 Verify redirection to Forgot Username Screen after click on Forgot Username link</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6246 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to click on &quot;Forgot username&quot; link</td>
+              <td>PASSED</td>
+              <td>864 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;Forgot username&quot; screen should be open</td>
+              <td>PASSED</td>
+              <td>493 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">12 Verify Validation message with blank email id and clicks on SEND EMAIL button for Forgot Username</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6139 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to click on &quot;Forgot username&quot; link</td>
+              <td>PASSED</td>
+              <td>937 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I click on SEND EMAIL button without inserting &quot;email&quot;</td>
+              <td>PASSED</td>
+              <td>1104 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;blank email validation&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>355 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">13 Verify Thanks Message after entered valid email id and clicks on SEND EMAIL button for Forgot Username</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>5943 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to click on &quot;Forgot username&quot; link</td>
+              <td>PASSED</td>
+              <td>715 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I click on SEND EMAIL button with inserting &quot;email&quot;</td>
+              <td>PASSED</td>
+              <td>1357 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;Check your email&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>658 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">14 Verify redirection to Forgot Password Screen after click on Forgot Password link</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6424 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to click on &quot;Forgot password&quot; link</td>
+              <td>PASSED</td>
+              <td>762 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;Forgot password&quot; screen should be open</td>
+              <td>PASSED</td>
+              <td>437 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">15 Verify validation message with blank username and clicks on SEND EMAIL button for Forgot Password</span>
+          </summary>
+          <p><a href="artifacts/screenshots/15_Verify_validation_message_with_blank_username_and_clicks_on_SEND_EMAIL_button_for_Forgot_Password.png" target="_blank">Open related screenshot</a></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>5905 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to click on &quot;Forgot password&quot; link</td>
+              <td>PASSED</td>
+              <td>919 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="failed">
+              <td>And </td>
+              <td>I click on SEND EMAIL button without inserting &quot;username&quot;</td>
+              <td>FAILED</td>
+              <td>30667 ms</td>
+              <td><pre>locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator(&#39;//input[@id=\&#39;password\&#39;]&#39;)[22m
+
+    at CandidateLoginPage.clickButton (C:\AutomationProjects\CPAutomationTS\src\pages\CandidateLoginPage.js:65:76)
+    at async CustomWorld.&lt;anonymous&gt; (C:\AutomationProjects\CPAutomationTS\src\steps\candidateLoginSteps.ts:87:5)</pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>Then </td>
+              <td>I verify that &quot;blank username validation&quot; messages should be display</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">16 Verify Thanks Message after entered valid username and clicks on SEND EMAIL button for Forgot Password</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Login screen</td>
+              <td>PASSED</td>
+              <td>6357 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to click on &quot;Forgot password&quot; link</td>
+              <td>PASSED</td>
+              <td>818 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I click on SEND EMAIL button with inserting &quot;username&quot;</td>
+              <td>PASSED</td>
+              <td>1365 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that &quot;Check your email&quot; messages should be display</td>
+              <td>PASSED</td>
+              <td>614 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+      </section>
+    
+</body>
+</html>

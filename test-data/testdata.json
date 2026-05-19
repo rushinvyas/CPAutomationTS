@@ -1,0 +1,4 @@
+{
+  "deprecated": true,
+  "message": "This file is no longer used. Use base.json, Uat.json, and Prod.json instead."
+}

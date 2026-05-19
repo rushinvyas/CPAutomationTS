@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CP Automation TS Report</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; background: #f7f7fb; color: #222; }
+    h1, h2 { margin-bottom: 12px; }
+    .summary, .feature { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    pre { white-space: pre-wrap; word-break: break-word; margin: 0; font-family: Consolas, monospace; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f0f2f8; }
+    tr.passed td { background: #eefaf0; }
+    tr.failed td { background: #fff0f0; }
+    tr.skipped td { background: #faf7e8; }
+    details.scenario { margin-bottom: 16px; border: 1px solid #e5e7ef; border-radius: 10px; padding: 12px; }
+    summary { cursor: pointer; font-weight: 600; }
+    .scenario-name { color: #1d3557; }
+    a { color: #c2188b; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>CP Automation TS HTML Report</h1>
+  <section class="summary">
+    <h2>Execution Summary</h2>
+    <pre>CP Automation TS Execution Summary
+Run Timestamp: 20260406_173835
+Environment: UAT
+Portal: HOLT
+Duration: 2m 55s 776ms
+
+Scenarios -&gt; Passed: 1, Failed: 1, Skipped: 0
+Scenario Percentages -&gt; Pass: 50.00%, Fail: 50.00%
+Steps -&gt; Passed: 18, Failed: 1, Skipped: 5
+Step Percentages -&gt; Pass: 75.00%, Fail: 4.17%
+
+Scenario Details:
+- [PASSED] 01 Prod Smoke Regression Suite - HOLT :: 01 Verify Sign In and Sign Out functionality for Holt Candidate
+- [FAILED] 01 Prod Smoke Regression Suite - HOLT :: 02 Verify Sign In and Sign Out functionality for Holt Staff user
+  Failed Step: I verify Holt Candidate should be display in Awaiting review grid box</pre>
+  </section>
+  
+      <section class="feature">
+        <h2>01 Prod Smoke Regression Suite - HOLT</h2>
+        
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">01 Verify Sign In and Sign Out functionality for Holt Candidate</span>
+          </summary>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Holtlogin Page</td>
+              <td>PASSED</td>
+              <td>4362 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to login to CP with Holt Candidate credential</td>
+              <td>PASSED</td>
+              <td>1708 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify Otp Entered for candidate should be Correct</td>
+              <td>PASSED</td>
+              <td>5645 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that Candidate should be login and Dashboard should be open</td>
+              <td>PASSED</td>
+              <td>5920 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I verify that user should be logout from Dashboard and redirect to Login page</td>
+              <td>PASSED</td>
+              <td>742 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+        <details class="scenario">
+          <summary>
+            <span class="scenario-name">02 Verify Sign In and Sign Out functionality for Holt Staff user</span>
+          </summary>
+          <p><a href="artifacts/screenshots/02_Verify_Sign_In_and_Sign_Out_functionality_for_Holt_Staff_user.png" target="_blank">Open related screenshot</a></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Step</th>
+                <th>Status</th>
+                <th>Duration</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            <tr class="passed">
+              <td>Given </td>
+              <td>I am on CP Holtlogin Page</td>
+              <td>PASSED</td>
+              <td>4482 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to login to CP with Holt Staff credential</td>
+              <td>PASSED</td>
+              <td>1472 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify that Holt Staff should be login and Dashboard should be open</td>
+              <td>PASSED</td>
+              <td>312 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to search Holt Candidate</td>
+              <td>PASSED</td>
+              <td>9192 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify Holt Candidate should be display in grid box</td>
+              <td>PASSED</td>
+              <td>103 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I verify after clicks on candidate detail page should be display</td>
+              <td>PASSED</td>
+              <td>8074 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I am going to search with Representative name for Holt linked candidates</td>
+              <td>PASSED</td>
+              <td>4989 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify Holt Candidate should be display in grid box</td>
+              <td>PASSED</td>
+              <td>148 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I verify after clicks on candidate detail page should be display</td>
+              <td>PASSED</td>
+              <td>7960 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I filter with Representative name to get linked Holt candidates</td>
+              <td>PASSED</td>
+              <td>26629 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>Then </td>
+              <td>I verify Holt Candidate should be display in Awaiting review grid box</td>
+              <td>PASSED</td>
+              <td>240 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>And </td>
+              <td>I verify when clicks on Representative filter candidate name and detail page should be display</td>
+              <td>PASSED</td>
+              <td>11838 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="passed">
+              <td>When </td>
+              <td>I filter with Followuptoday name to get linked Holt candidates</td>
+              <td>PASSED</td>
+              <td>21845 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="failed">
+              <td>Then </td>
+              <td>I verify Holt Candidate should be display in Awaiting review grid box</td>
+              <td>FAILED</td>
+              <td>60116 ms</td>
+              <td><pre>Error: expect(locator).toBeVisible() failed
+
+Locator: locator(&#39;//div[@class=\&#39;list-box\&#39;]//strong[contains(text(),\&#39;HoltEmail Cantwo\&#39;)]&#39;)
+Expected: visible
+Timeout: 60000ms
+Error: element(s) not found
+
+Call log:
+  - Expect &quot;to.be.visible&quot; with timeout 60000ms
+  - waiting for locator(&#39;//div[@class=\&#39;list-box\&#39;]//strong[contains(text(),\&#39;HoltEmail Cantwo\&#39;)]&#39;)
+
+    at Proxy.&lt;anonymous&gt; (C:\AutomationProjects\CPAutomationTS\node_modules\playwright\lib\matchers\expect.js:213:24)
+    at WaitHelper.visible (C:\AutomationProjects\CPAutomationTS\src\utils\WaitHelper.js:7:43)
+    at DashboardPage.verifyCandidateInAwaitingReviewGrid (C:\AutomationProjects\CPAutomationTS\src\pages\DashboardPage.js:134:39)
+    at CustomWorld.&lt;anonymous&gt; (C:\AutomationProjects\CPAutomationTS\src\steps\loginSteps.ts:188:23)</pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>And </td>
+              <td>I verify when clicks on Followuptoday filter candidate name and detail page should be display</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>When </td>
+              <td>I filter with Followupsoon name to get linked Holt candidates</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>Then </td>
+              <td>I verify Holt Candidate should be display in Awaiting review grid box</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>And </td>
+              <td>I verify when clicks on Followupsoon filter candidate name and detail page should be display</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            <tr class="skipped">
+              <td>And </td>
+              <td>I verify that user should be logout from Dashboard and redirect to Login page</td>
+              <td>SKIPPED</td>
+              <td>0 ms</td>
+              <td><pre></pre></td>
+            </tr>
+          
+            </tbody>
+          </table>
+        </details>
+      
+      </section>
+    
+</body>
+</html>

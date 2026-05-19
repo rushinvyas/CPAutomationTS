@@ -1,0 +1,7 @@
+CP Automation TS Execution Summary
+Run Timestamp: 20260407T112622
+Environment: Not Set
+Portal: Not Set
+
+Summary could not be generated from cucumber-report.json.
+Reason: Cucumber report is empty at C:\AutomationProjects\CPAutomationTS\artifacts\cucumber-report.json

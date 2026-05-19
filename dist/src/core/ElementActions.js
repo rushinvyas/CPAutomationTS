@@ -1,0 +1,259 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ElementActions = void 0;
+class ElementActions {
+    page;
+    constructor(page) {
+        this.page = page;
+    }
+    locator(target) {
+        if (this.isLocator(target)) {
+            return target;
+        }
+        const selector = target.trim();
+        if (!selector) {
+            throw new Error("Locator target cannot be empty.");
+        }
+        if (selector.startsWith("//") ||
+            selector.startsWith("(//") ||
+            selector.startsWith(".//") ||
+            selector.startsWith("xpath=")) {
+            return this.page.locator(selector);
+        }
+        const separatorIndex = selector.indexOf("=");
+        if (separatorIndex > 0) {
+            const strategy = selector.slice(0, separatorIndex).trim().toLowerCase();
+            const value = selector.slice(separatorIndex + 1).trim();
+            if (!value) {
+                throw new Error(`Locator value is missing for strategy: ${strategy}`);
+            }
+            switch (strategy) {
+                case "css":
+                    return this.page.locator(value);
+                case "id":
+                    return this.page.locator(`[id="${this.escapeAttributeValue(value)}"]`);
+                case "name":
+                    return this.page.locator(`[name="${this.escapeAttributeValue(value)}"]`);
+                case "class":
+                    return this.page.locator(value
+                        .split(/\s+/)
+                        .filter(Boolean)
+                        .map((className) => `[class~="${this.escapeAttributeValue(className)}"]`)
+                        .join(""));
+                case "text":
+                    return this.page.getByText(value, { exact: true });
+                case "partialtext":
+                case "containstext":
+                    return this.page.getByText(value);
+                case "label":
+                    return this.page.getByLabel(value, { exact: true });
+                case "placeholder":
+                    return this.page.getByPlaceholder(value, { exact: true });
+                case "title":
+                    return this.page.getByTitle(value, { exact: true });
+                case "alt":
+                    return this.page.getByAltText(value, { exact: true });
+                case "value":
+                    return this.page.locator(`[value="${this.escapeAttributeValue(value)}"]`);
+                case "data":
+                    return this.page.locator(`[data-${this.escapeAttributeValue(value)}]`);
+                case "attribute": {
+                    const [attributeName, ...rest] = value.split("|").map((item) => item.trim());
+                    const attributeValue = rest.join("|").trim();
+                    return attributeValue
+                        ? this.page.locator(`[${attributeName}="${this.escapeAttributeValue(attributeValue)}"]`)
+                        : this.page.locator(`[${attributeName}]`);
+                }
+                case "testid":
+                case "data-testid":
+                    return this.page.getByTestId(value);
+                case "role": {
+                    const [roleName, accessibleName] = value.split("|").map((item) => item.trim());
+                    return this.page.getByRole(roleName, accessibleName ? { name: accessibleName } : {});
+                }
+                case "xpath":
+                    return this.page.locator(`xpath=${value}`);
+                default:
+                    break;
+            }
+        }
+        return this.page.locator(selector);
+    }
+    async click(target, options = {}) {
+        await this.locator(target).click(options);
+    }
+    async doubleClick(target, options = {}) {
+        await this.locator(target).dblclick(options);
+    }
+    async rightClick(target, options = {}) {
+        await this.locator(target).click({ ...options, button: "right" });
+    }
+    async fill(target, value) {
+        await this.locator(target).fill(value);
+    }
+    async type(target, value) {
+        await this.locator(target).pressSequentially(value);
+    }
+    async append(target, value) {
+        await this.locator(target).pressSequentially(value);
+    }
+    async clear(target) {
+        await this.locator(target).fill("");
+    }
+    async focus(target) {
+        await this.locator(target).focus();
+    }
+    async check(target) {
+        await this.locator(target).check();
+    }
+    async uncheck(target) {
+        await this.locator(target).uncheck();
+    }
+    async selectRadio(target) {
+        await this.check(target);
+    }
+    async selectDropdown(target, option) {
+        if (typeof option === "number") {
+            await this.locator(target).selectOption({ index: option });
+            return;
+        }
+        if (typeof option === "string") {
+            const trimmedOption = option.trim();
+            await this.locator(target).selectOption([
+                { label: trimmedOption },
+                { value: trimmedOption }
+            ]);
+            return;
+        }
+        await this.locator(target).selectOption(option);
+    }
+    async hover(target) {
+        await this.locator(target).hover();
+    }
+    async press(target, key) {
+        await this.locator(target).press(key);
+    }
+    async blur(target) {
+        await this.locator(target).evaluate((element) => {
+            if (element instanceof HTMLElement) {
+                element.blur();
+            }
+        });
+    }
+    async uploadFile(target, filePath) {
+        await this.locator(target).setInputFiles(filePath);
+    }
+    async dragAndDrop(source, destination) {
+        await this.locator(source).dragTo(this.locator(destination));
+    }
+    async setCheckbox(target, checked) {
+        if (checked) {
+            await this.check(target);
+            return;
+        }
+        await this.uncheck(target);
+    }
+    async waitForVisible(target, timeout) {
+        await this.locator(target).waitFor({ state: "visible", timeout });
+    }
+    async waitForHidden(target, timeout) {
+        await this.locator(target).waitFor({ state: "hidden", timeout });
+    }
+    async getText(target) {
+        return (await this.locator(target).textContent())?.trim() ?? "";
+    }
+    async getValue(target) {
+        return await this.locator(target).inputValue();
+    }
+    async isVisible(target) {
+        return await this.locator(target).isVisible();
+    }
+    async isEnabled(target) {
+        return await this.locator(target).isEnabled();
+    }
+    async isChecked(target) {
+        return await this.locator(target).isChecked();
+    }
+    async perform(action, target, options = {}) {
+        switch (action) {
+            case "click":
+                await this.click(target, { timeout: options.timeout, force: options.force });
+                return;
+            case "doubleClick":
+                await this.doubleClick(target, { timeout: options.timeout, force: options.force });
+                return;
+            case "rightClick":
+                await this.rightClick(target, { timeout: options.timeout, force: options.force });
+                return;
+            case "fill":
+                await this.fill(target, options.value ?? "");
+                return;
+            case "type":
+                await this.type(target, options.value ?? "");
+                return;
+            case "append":
+                await this.append(target, options.value ?? "");
+                return;
+            case "check":
+                await this.check(target);
+                return;
+            case "uncheck":
+                await this.uncheck(target);
+                return;
+            case "setCheckbox":
+                if (options.checked === undefined) {
+                    throw new Error("Checkbox state action requires a checked value.");
+                }
+                await this.setCheckbox(target, options.checked);
+                return;
+            case "radio":
+                await this.selectRadio(target);
+                return;
+            case "select":
+                if (options.option === undefined) {
+                    throw new Error("Dropdown selection requires an option value.");
+                }
+                await this.selectDropdown(target, options.option);
+                return;
+            case "hover":
+                await this.hover(target);
+                return;
+            case "press":
+                if (!options.pressKey) {
+                    throw new Error("Keyboard action requires a pressKey value.");
+                }
+                await this.press(target, options.pressKey);
+                return;
+            case "clear":
+                await this.clear(target);
+                return;
+            case "focus":
+                await this.focus(target);
+                return;
+            case "blur":
+                await this.blur(target);
+                return;
+            case "upload":
+                if (!options.filePath) {
+                    throw new Error("File upload action requires a filePath value.");
+                }
+                await this.uploadFile(target, options.filePath);
+                return;
+            case "dragAndDrop":
+                if (!options.destination) {
+                    throw new Error("Drag and drop action requires a destination locator.");
+                }
+                await this.dragAndDrop(target, options.destination);
+                return;
+            default:
+                throw new Error(`Unsupported action requested: ${action}`);
+        }
+    }
+    isLocator(target) {
+        return typeof target === "object" && target !== null;
+    }
+    escapeAttributeValue(value) {
+        return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+    }
+}
+exports.ElementActions = ElementActions;

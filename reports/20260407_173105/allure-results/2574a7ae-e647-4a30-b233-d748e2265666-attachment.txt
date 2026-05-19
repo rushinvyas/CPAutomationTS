@@ -1,0 +1,1 @@
+Validation: blank username validation message is displayed as expected.

@@ -1,0 +1,1 @@
+Validation: validation message is displayed as expected.

@@ -1,0 +1,1 @@
+Validation: Dashboard is displayed successfully.

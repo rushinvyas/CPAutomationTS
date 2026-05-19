@@ -1,0 +1,19 @@
+{
+  "IsAzure": "Yes",
+  "KeyVaultUrl": "https://autokeyvault.vault.azure.net/",
+  "ClientID": "19d8613a-22ab-49d7-8bac-413f0a1a88a5",
+  "TenantID": "72442717-12c4-4213-90d3-a78cea8a11b9",
+  "ClientSecret": "OcY8Q~t~T3fhmU4lv60xJl4dGe2LUmKvXTJGJcuF",
+  "CPURL": "compliance.holtdoctors.co.uk/login",
+  "CPRegisteURL": "compliance.holtdoctors.co.uk/register",
+  "CPLoginURL": "compliance.holtdoctors.co.uk/login",
+  "CPHOLTStaffUsername": "CPHOLTStaffUsername",
+  "CPClientPersonUsername": "CPClientPersonUsername",
+  "CPAgencyPersonUsername": "CPAgencyPersonUsername",
+  "CPHOLTCandidate": "CPHOLTCandidate",
+  "CPHOLTCandidateEmail": "CPHOLTCandidateEmail",
+  "RepresentativeName": "RepresentativeName",
+  "AutomationHOLTCandidate": "AutomationHOLTCandidate",
+  "AutomationStaffName": "AutomationStaffName",
+  "password": "password"
+}

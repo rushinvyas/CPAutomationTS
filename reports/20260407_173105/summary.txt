@@ -1,0 +1,29 @@
+CP Automation TS Execution Summary
+Run Timestamp: 20260407_173105
+Environment: UAT
+Portal: HOLT
+Duration: 1m 47s 321ms
+
+Scenarios -> Passed: 15, Failed: 1, Skipped: 0
+Scenario Percentages -> Pass: 93.75%, Fail: 6.25%
+Steps -> Passed: 52, Failed: 1, Skipped: 1
+Step Percentages -> Pass: 96.30%, Fail: 1.85%
+
+Scenario Details:
+- [FAILED] 02 Login Screen Functionality :: 01 Verify Sign In and Sign Out functionality for HOLT Candidate
+  Failed Step: I verify the Candidate should be login and Dashboard page should be open
+- [PASSED] 02 Login Screen Functionality :: 02 Verify Login screen validation functionality with blank validation for Username & Password
+- [PASSED] 02 Login Screen Functionality :: 03 Verify Login screen validation functionality with blank validation for Username
+- [PASSED] 02 Login Screen Functionality :: 04 Verify Login screen validation functionality with blank validation for Password
+- [PASSED] 02 Login Screen Functionality :: 05 Verify Login screen validation functionality with wrong Username
+- [PASSED] 02 Login Screen Functionality :: 06 Verify Login screen validation functionality with wrong Password
+- [PASSED] 02 Login Screen Functionality :: 07 Verify Login screen validation functionality with wrong Username and Password
+- [PASSED] 02 Login Screen Functionality :: 08 Verify Sign In and Sign Out functionality for HOLT Staff user
+- [PASSED] 02 Login Screen Functionality :: 09 Verify Sign In functionality for Agency user
+- [PASSED] 02 Login Screen Functionality :: 10 Verify Sign In functionality for Client Person
+- [PASSED] 02 Login Screen Functionality :: 11 Verify redirection to Forgot Username Screen after click on Forgot Username link
+- [PASSED] 02 Login Screen Functionality :: 12 Verify Validation message with blank email id and clicks on SEND EMAIL button for Forgot Username
+- [PASSED] 02 Login Screen Functionality :: 13 Verify Thanks Message after entered valid email id and clicks on SEND EMAIL button for Forgot Username
+- [PASSED] 02 Login Screen Functionality :: 14 Verify redirection to Forgot Password Screen after click on Forgot Password link
+- [PASSED] 02 Login Screen Functionality :: 15 Verify validation message with blank username and clicks on SEND EMAIL button for Forgot Password
+- [PASSED] 02 Login Screen Functionality :: 16 Verify Thanks Message after entered valid username and clicks on SEND EMAIL button for Forgot Password

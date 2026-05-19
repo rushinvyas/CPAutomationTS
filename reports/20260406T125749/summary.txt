@@ -1,0 +1,15 @@
+CP Automation TS Execution Summary
+Run Timestamp: 20260406_173835
+Environment: UAT
+Portal: HOLT
+Duration: 2m 55s 776ms
+
+Scenarios -> Passed: 1, Failed: 1, Skipped: 0
+Scenario Percentages -> Pass: 50.00%, Fail: 50.00%
+Steps -> Passed: 18, Failed: 1, Skipped: 5
+Step Percentages -> Pass: 75.00%, Fail: 4.17%
+
+Scenario Details:
+- [PASSED] 01 Prod Smoke Regression Suite - HOLT :: 01 Verify Sign In and Sign Out functionality for Holt Candidate
+- [FAILED] 01 Prod Smoke Regression Suite - HOLT :: 02 Verify Sign In and Sign Out functionality for Holt Staff user
+  Failed Step: I verify Holt Candidate should be display in Awaiting review grid box

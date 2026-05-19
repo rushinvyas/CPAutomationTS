@@ -1,0 +1,1 @@
+Validation: Check your email message is displayed as expected.
